@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import styles from "../styles/NavbarStyles.css";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
                 <div className="container-fluid">

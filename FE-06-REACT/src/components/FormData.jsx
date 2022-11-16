@@ -46,10 +46,10 @@ export default function FormData() {
           
         </form>
         <div className="mb-2">
-            <input type="submit" value="Submit" className="btn btn-secondary" />
+            <input type="submit" value="Submit" className="btn btn-primary" />
         </div>
         <div className="mb-2">
-        <input type="submit" value="Back" className="btn btn-primary" />
+        <input type="submit" value="Back" className="btn btn-secondary" />
         </div>
       </div>
     );
