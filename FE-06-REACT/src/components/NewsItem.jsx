@@ -1,4 +1,9 @@
+import styles from "../styles/NewsItemStyles.css";
+
 import React, { Component } from 'react'
+
+import { NavLink } from "react-router-dom";
+
 
 export class NewsItem extends Component {
     render() {

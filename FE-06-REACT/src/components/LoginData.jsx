@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Component} from 'react';
 
-<<<<<<< HEAD
-const Login = () =>  {
-
+export class Login extends Component {
+    
+    render() { 
         return (
             <div className="container">
                 <div className="row justify-content-center">
@@ -10,16 +10,16 @@ const Login = () =>  {
                         <h2>Login</h2>
                             <form>
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputEmail1">Username </label>
+                                    <label for="exampleInputEmail1">Username </label>
                                      <input type="email" className="form-control" placeholder="Masukan username anda"  required/>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1">Password</label>
+                                    <label for="exampleInputPassword1">Password</label>
                                     <input type="password" className="form-control" placeholder="Password" />
                                 </div>
                                 <div className="form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                    <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
+                                    <label className="form-check-label" for="exampleCheck1">Remember Me</label>
                                     </div>
                                     <button type="submit" className="btn btn-primary btn-lg btn-block">Login</button>   
                             </form>
@@ -28,21 +28,6 @@ const Login = () =>  {
             </div> 
          );
     }
-
+}
  
 export default Login ;
-=======
-import Navbar from "../components/Navbar";
-import Login from "../components/LoginData";
-
-const Project = () => {
-    return (
-      <div>
-        <Navbar />
-        <Login/>
-      </div>
-    )
-  }
-  
-  export default Project
->>>>>>> f-paran
