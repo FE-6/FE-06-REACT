@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Login from "../components/LoginData";
 
-const Project = () => {
+const Login = () => {
     return (
       <div>
         <Navbar />
@@ -12,4 +12,4 @@ const Project = () => {
     )
   }
   
-  export default Project
+  export default Login
