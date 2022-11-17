@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
-import NewsItem from "./NewsItem";
+import LoginData from "./LoginData"
+import Register from "./Register"
 
-export { Navbar, NewsItem  } ;
+export { Navbar, LoginData, Register  } ;
