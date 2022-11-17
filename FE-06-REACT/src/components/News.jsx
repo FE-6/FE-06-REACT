@@ -1,69 +1,41 @@
-import React, { Component } from 'react'
-import NewsItem from '../components/NewsItem'
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-export class News extends Component {
-    constructor() {
-        super();
-        this.state = {
-            articles: [],
-            loading: false,
-            page:1,
+function News() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [news, setNews] = useState([]);
 
-        }
-    }
+    useEffect(() => {
+        axios("https://6353739ca9f3f34c3752aeb7.mockapi.io/ayf/article").then((res) => {
+          setNews(res.data);
+          setIsLoading(false);
+        });
+      }, []);
 
-    async componentDidMount() {
-        let url = "https://newsapi.org/v2/top-headlines?country=id&apiKey=3c1d74a564d2493da04c939cca31f17b";
-        let data = await fetch(url);
-        let parsedData = await data.json()
-        this.setState({articles: parsedData.articles, totalResults: parsedData.totalResults})
-    }
+      console.log(news);
 
-    handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=id&apiKey=3c1d74a564d2493da04c939cca31f17b`;
-        let data = await fetch(url);
-        let parsedData = await data.json()
+  const clickNew = (item) => {
+    console.log(item);
+    };
 
-        this.setState({
-            page: this.state.page-1,
-            articles: parsedData.articles
-        })
-    }
-
-    handleNextClick = async () => {
-        if(this.state.page+1 > Math.ceil(this.state.totalResults/20)){
-
-        }
-        else {
-            let url = `https://newsapi.org/v2/top-headlines?country=id&apiKey=3c1d74a564d2493da04c939cca31f17b`;
-            let data = await fetch(url);
-            let parsedData = await data.json()
-    
-            this.setState({
-                page: this.state.page+1,
-                articles: parsedData.articles
-            })
-        }
-    }
-
-    render() {
-        return (
-            <div className='container my-3'>
-                <h1>NewsStar top headlines</h1>
-                <div className="row">
-                    {this.state.articles.map((element) => {
-                        return <div className="col-md-4 mt-2" key={element.url}>
-                            <NewsItem title={element.title?element.title:""} description={element.description?element.description:""} imageUrl={element.urlToImage} newsUrl={element.url} />
-                        </div>
-                    })}
-                </div>
-                <div className="container d-flex justify-content-between">
-                    <button disabled={this.state.page <= 1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}> &larr; Previous</button>
-                    <button type="button" className="btn btn-dark" onClick={this.handleNextClick} >Nest &rarr;</button>
+return (
+    <>
+        {
+            news.map((item, idx) => (
+                <div className='my-3'>
+                <div className="card" style={{width: '18rem'}} key={idx} onClick={() => clickNew(item)}>
+                    <img src={item.image} className="card-img-top" alt="" />
+                    <div className="card-body" >
+                        <h5 className="card-title">{item.title}</h5>
+                        <p className="card-text">{item.content}</p>
+                        <a href="" className="btn btn-dark">Liat Berita</a>
+                    </div>
                 </div>
             </div>
-        )
-    }
+            ))
+        }
+    </>
+)
 }
 
 export default News
