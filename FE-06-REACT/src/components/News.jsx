@@ -13,14 +13,14 @@ export class News extends Component {
     }
 
     async componentDidMount() {
-        let url = "https://newsapi.org/v2/top-headlines?country=id&apiKey=3c1d74a564d2493da04c939cca31f17b";
+        let url = "https://6353739ca9f3f34c3752aeb7.mockapi.io/ayf/article";
         let data = await fetch(url);
         let parsedData = await data.json()
         this.setState({articles: parsedData.articles, totalResults: parsedData.totalResults})
     }
 
     handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=id&apiKey=3c1d74a564d2493da04c939cca31f17b`;
+        let url = `https://6353739ca9f3f34c3752aeb7.mockapi.io/ayf/article`;
         let data = await fetch(url);
         let parsedData = await data.json()
 
