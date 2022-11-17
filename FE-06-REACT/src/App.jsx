@@ -6,8 +6,12 @@ import { useDispatch } from 'react-redux';
 
 import './index.css'
 import Home from './pages/Home';
+<<<<<<< HEAD
 import Login from './components/LoginData';
 import FormData from './pages/FormData';
+=======
+import { Login } from './components/LoginData';
+>>>>>>> 00d6ec863350afc8074e0ba9714b462cacf1bbb7
 
 import { Routes, Route } from "react-router-dom";
 
