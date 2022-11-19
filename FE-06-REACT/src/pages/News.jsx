@@ -1,10 +1,12 @@
 import  NewsCard  from '../components/NewsCard'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function News() {
     const [isLoading, setIsLoading] = useState(true);
     const [news, setNews] = useState([]);
+    // const navigation = useNavigate();
 
     useEffect(() => {
         axios("https://6353739ca9f3f34c3752aeb7.mockapi.io/ayf/article").then((res) => {
@@ -15,18 +17,22 @@ function News() {
 
       console.log(news);
 
+    // const handleDetail = (id) => {
+    //     navigation(`/detail/${id}`);
+    // }
 
 return(
     <>
         {
-            news.map((item, idx) => (
+            news.map((article, id) => (
                 <div className='container my-3'>
                     <div className="row">
-                        <div className="col-md-4 mt-2" key={idx} >
+                        <div className="col-md-4 mt-2" key={id} >
                             <NewsCard
-                                image={item.image}
-                                title={item.title}
-                                content={item.content}
+                                image={article.image}
+                                title={article.title}
+                                content={article.content}
+                                
                             />
     
                         </div>
