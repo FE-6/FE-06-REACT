@@ -1,15 +1,12 @@
 import React from "react";
+import LoginData from "../components/LoginData";
 
-import Navbar from "../components/Navbar";
-import Login from "../components/LoginData";
-
-const Project = () => {
+const Login = () => {
     return (
       <div>
-        <Navbar />
-        <Login/>
+        <LoginData/>
       </div>
     )
   }
   
-  export default Project
+  export default Login
