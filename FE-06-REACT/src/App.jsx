@@ -8,7 +8,7 @@ import './index.css'
 import Home from './pages/Home';
 import { Login } from './components/LoginData';
 import FormData from './pages/FormData';
-
+import NewsDetail from './pages/NewsDetail';
 import { Routes, Route } from "react-router-dom";
 
 function App(props) {
@@ -23,6 +23,7 @@ function App(props) {
       <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/newsdetail" element={<NewsDetail />} />
         <Route path="login" element={<Login />} />
         <Route path="formdata" element={<FormData />} />
       </Routes>

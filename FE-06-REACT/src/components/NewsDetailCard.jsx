@@ -7,7 +7,7 @@ const NewsDetailCard = ({title, name, createdAt, image, content}) => {
                     <h6 className="col-sm-9 p-3">{name}</h6>
                     <p className="col-7 p-3">{createdAt}</p>
                     <img className="col-7 p-3" src={image} alt="" />
-                    <p class="berita-isi col-sm-9 p-3">{content}</p>
+                    <p className="berita-isi col-sm-9 p-3">{content}</p>
                 </div>
             </div>
         </>
