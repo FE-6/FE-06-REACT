@@ -6,8 +6,9 @@ import { useDispatch } from 'react-redux';
 
 import './index.css'
 import Home from './pages/Home';
-import { Login } from './components/LoginData';
+import Login from './components/LoginData';
 import FormData from './pages/FormData';
+// import Login from './pages/Login';
 
 import { Routes, Route } from "react-router-dom";
 
