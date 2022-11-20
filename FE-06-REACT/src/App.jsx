@@ -1,15 +1,15 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client'
+import { Routes, Route } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-
-import './index.css'
+import ReactDOM from 'react-dom/client'
 import Home from './pages/Home';
-import { Login } from './components/LoginData';
+import Login from './pages/Login';
 import FormData from './pages/FormData';
 import NewsDetail from './pages/NewsDetail';
-import { Routes, Route } from "react-router-dom";
+import Register from './pages/Register';
+import './index.css'
 
 function App(props) {
   const dispatch = useDispatch();
@@ -24,8 +24,9 @@ function App(props) {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newsdetail" element={<NewsDetail />} />
-        <Route path="login" element={<Login />} />
-        <Route path="formdata" element={<FormData />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/formdata" element={<FormData />} />
       </Routes>
       </>
     </div>

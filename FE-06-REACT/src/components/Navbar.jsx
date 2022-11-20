@@ -1,34 +1,27 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import logo from "../logo.png";
+import { MdLogin } from "react-icons/md";
 import styles from "../styles/NavbarStyles.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
+    <nav className="navbar navbar-expand-lg bg-primary">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">FE 06</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
-                                <Link to={"/"}>Home </Link>
-                            </li>
-                            <li className="nav-item">
-                                {/* <a className="nav-link" href="/about">About</a> */}
-                                <Link to={"/formdata"}>Data</Link>
-                            </li>
-                        </ul> 
+                    <a className="navbar-brand">
+                        <img src={logo} alt="" width="60" height="30"/>
+                    </a>
+                    <h3 className="nav justify-item-center text-light">AYF</h3>
+                   
                         <ul className="nav justify-content-end">
                             <li className="nav-item">
-                              {/* <a className="nav-link" href="/login">Login</a> */}
-                              <Link to={"/login"}>Login</Link>
-                            </li>
-                        </ul>
-                    </div>
+                                <Link to={"/login"} style={{color: 'white'}}>Login
+                                <MdLogin size={30} style={{color: 'white', marginRight:"1rem"}}/>
+                                </Link>
+                            </li>                           
+                        </ul>                       
                 </div>
+                
             </nav>
   )
 }
