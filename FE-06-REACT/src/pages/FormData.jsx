@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import {createFormAction} from '../redux/action/FormAction'
+import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 
 export default function FormData(props) {
@@ -21,7 +23,10 @@ export default function FormData(props) {
   }
 
   return (
-    <div>
+    <>
+    <Navbar/>
+    <div className="container">
+      <div className="row">
       <div className="flex items-center justify-between my-4">
         <h2>Create Data</h2>
       </div>
@@ -51,12 +56,18 @@ export default function FormData(props) {
           </div>
         </div>
   
-          <div>
+          <div className="mb-2">
             <button type="submit" className="btn btn-primary">Create</button>
+          </div>
+
+          <div className="mb-2">
+            <Link to={"/"} type="submit" className="btn btn-secondary">Back</Link>
           </div>
   
       </form>
+      </div>
     </div>
+    </>
   )
 }
 
