@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -6,7 +7,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
+        console.log({email, password});
     }
      
         return (
@@ -17,20 +18,20 @@ const Login = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="email">Email</label>
-                                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email"  required/>
+                                    <input value={email} onChange={(e) => setEmail({email: e.target.value})} type="email" className="form-control" placeholder="Email"  required/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputPassword1">Password</label>
-                                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" placeholder="Password" />
+                                    <input value={password} onChange={(e) => setPassword({password: e.target.value})} type="password" className="form-control" placeholder="Password" />
                                 </div>
                                 <div className="form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                    <label className="form-check-label" for="exampleCheck1">Remember Me</label>
+                                    <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
                                     </div>
                                     <button type="submit" className="btn btn-primary btn-lg btn-block">Login</button>
                                       
                             </form>
-                            <p>Don't have an account? Register here</p> 
+                            <p>Don't have an account? <Link to={"/login"}>Register here</Link></p> 
                         </div>
                         
                 </div>
