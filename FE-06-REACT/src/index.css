@@ -7,9 +7,9 @@
   font-family: 'Outfit', sans-serif;
 }
 
-body{
+/* body{
   background: rgb(255, 255, 255);
-}
+} */
 
 h1, h4, p,
 a{
@@ -25,7 +25,7 @@ ul{
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
-  background: rgb(248, 217, 15);
+  /* background: rgb(248, 217, 15); */
   color: #222;
   border: 1px solid #fff;
   font-weight: 600;
@@ -40,6 +40,6 @@ ul{
 
 .btn:hover {
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: rgb(0, 0, 0);
   transition: 0.3s;
 }
