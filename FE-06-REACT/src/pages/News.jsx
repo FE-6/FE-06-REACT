@@ -23,23 +23,19 @@ function News() {
 
 return(
     <>
-        {
-            news.map((article, id) => (
-                <div className='container my-3'>
-                    <div className="row">
-                        <div className="col-md-4 mt-2" key={id} >
-                            <NewsCard
-                                image={article.image}
-                                title={article.title}
-                                content={article.content}
-                                
-                            />
-    
-                        </div>
-                    </div>
+    <div className='container my-3'>
+        <div className='row'>
+            {news.map((article, id) => {
+                return <div className='col-md-4 mt-2' key={id}>
+                    <NewsCard
+                        image={article.image}
+                        title={article.title}
+                        content={article.content}
+                    />
                 </div>
-            ))
-        }
+            })}
+        </div>
+    </div>
     </>
 )
 }

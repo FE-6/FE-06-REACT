@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios'
 
 const RegisterData = () => {
@@ -17,10 +18,10 @@ const RegisterData = () => {
             email: email,
             password: password,
         }
-        .then(result => {
-            console.log(result.data)
-            alert('success done')
-        })
+        // .then(result => {
+        //     console.log(result.data)
+        //     alert('success done')
+        // })
         .catch(err => {
             console.log(err)
             alert('error')
@@ -46,7 +47,7 @@ const RegisterData = () => {
                                     <label htmlFor="exampleInputPassword1">Password</label>
                                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" placeholder="Password" />
                                 </div>
-                                    <button type="submit" className="btn btn-primary btn-lg btn-block" onClick={handleAPI}>Register</button>                                     
+                                    <button type="submit" className="btn btn-primary btn-lg btn-block" onClick={handleAPI}><Link to={"/login"}>Register</Link></button>                                     
                             </form>
                         </div>                       
                 </div>
